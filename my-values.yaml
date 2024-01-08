@@ -1,0 +1,24 @@
+clientURL:
+  clientRootUrl: http://localhost:3000
+
+proxy: edge
+
+auth:
+  adminUser: admin
+  adminPassword: user
+
+extraVolumes:
+  - name: config
+    configMap:
+      name: my-keycloak-realm
+ 
+
+
+extraVolumeMounts:
+  - name: config
+    mountPath: "/opt/bitnami/keycloak/data/import"
+    readOnly: true
+
+extraEnvVars:
+  - name: KEYCLOAK_EXTRA_ARGS
+    value: "--import-realm"
