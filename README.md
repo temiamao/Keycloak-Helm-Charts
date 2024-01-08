@@ -18,5 +18,5 @@ The Root URL parameter can be specified in the custom-values.yaml file.
 
 The custom realm JSON file shold be placed in the /files directory and named custom-realm.json since it serves as a data source to the configMap.
 
-Example Usage: helm install my-keycloak --values custom-values.yaml ./Keycloak-Helm-Charts
+Example Usage: helm install my-keycloak --values ./Keycloak-Helm-Charts/custom-values.yaml ./Keycloak-Helm-Charts
 
