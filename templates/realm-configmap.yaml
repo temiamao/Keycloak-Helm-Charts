@@ -2,6 +2,8 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: my-keycloak-realm
+  annotations:
+    checksum/config: {{ .Files.Get "custom-values.yaml"  | sha256sum }}
 data:
   custom-realm.json: |
 {{ (tpl (.Files.Get "files/custom-realm.json") . ) | indent 4}}
